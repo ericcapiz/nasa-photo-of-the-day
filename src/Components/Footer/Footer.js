@@ -10,9 +10,7 @@ justify-content: center;
 font-size: 20px;
 background-color: #26457a;
 position: fixed;
-left: 0;
-bottom: 0;
-width: 100%
+width: 100%;
 `;
 
 const Logo2 = styled.h1 `
