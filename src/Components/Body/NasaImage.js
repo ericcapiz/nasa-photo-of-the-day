@@ -29,14 +29,15 @@ padding: 0 25px;
 
 function NasaImage (){
     const [nasaData, setNasaData]=useState([])
-    const randomNum = Math.floor(Math.random() * 31) + 1;
+    const randomDay = Math.floor(Math.random() * 31) + 1;
     const randomMonth = Math.floor(Math.random() * 12) + 1;
     useEffect(()=>{
-        axios.get(`https://api.nasa.gov/planetary/apod?date=2017-${randomMonth}-${randomNum}&api_key=kJyIRdMDp5CtmX53QRvUf90MmBwpN781eyhab7Ea`).then(response=>{
+        axios.get(`https://api.nasa.gov/planetary/apod?date=2017-${randomMonth}-${randomDay}&api_key=kJyIRdMDp5CtmX53QRvUf90MmBwpN781eyhab7Ea`).then(response=>{
             console.log(response);
             setNasaData(response.data)
         });
     },[])
+    if(nasaData.media_type === "image"){
     return (
         <BodyDiv>
     <img src={nasaData.url} alt=''/>
@@ -48,5 +49,20 @@ function NasaImage (){
     </BodyDiv>
     
     )
+    }
+    else{
+        return (
+            <BodyDiv>
+        <iframe width= "800%" height="700px" src={nasaData.url}></iframe>
+        <TextDiv>
+        <h2> {nasaData.title}</h2>
+        <h3>{nasaData.explanation}</h3>
+        <h3>{nasaData.date}</h3>
+        </TextDiv>
+        </BodyDiv>
+        
+        )
+
+    }
 }
 export default NasaImage;
