@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Slogan from './slogan'
 import Logo from './Logo'
-
 //css for main header div
 const Heading = styled.div `
     color: dodgerblue;
@@ -20,6 +18,7 @@ const Company = styled.h1 `
     font-family: 'Krona One', sans-serif;
 
 `
+
 const Header = ()=>{
    return (
    <Heading>

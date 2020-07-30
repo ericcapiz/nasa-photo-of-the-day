@@ -9,8 +9,10 @@ flex-direction: row;
 justify-content: center;
 font-size: 20px;
 background-color: #26457a;
-position: fixed;
-width: 100%;
+// position: fixed;
+// bottom:0;
+// left:0;
+// width: 100%;
 `;
 
 const Logo2 = styled.h1 `
