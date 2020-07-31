@@ -34,7 +34,7 @@ const Header = ()=>{
    return (
    <Heading>
       <Logo />
-       <Company>NASA: Photo Of The Day</Company>
+       <Company>NSA: Photo Of The Day</Company>
        <Button onClick={() => window.location.reload(false)}>Click to get a random picture</Button>
    </Heading>
    )
